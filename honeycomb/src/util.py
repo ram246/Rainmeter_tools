@@ -1,5 +1,6 @@
 import os
 import sys
+import requests
 
 def get_filename_ext(filename):
     file_list = filename.split('.')
@@ -28,6 +29,15 @@ def get_resources_path():
     curr_file = os.path.abspath(sys.argv[0])
     curr_file = curr_file[:curr_file.rfind("\\")]
     return  curr_file[:curr_file.rfind("\\")] + "\\resources"
+
+def download_image_to(target, source):
+    req = requests.get(target)
+
+    source_file = open(source, 'wb')
+    source_file.write(req.content)
+    source_file.close()
+
+
     
 
 #edit_template("create_homeycomb_app.py", "sd", "s")
