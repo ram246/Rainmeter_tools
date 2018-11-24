@@ -4,7 +4,7 @@ import win32com.client
 
 import util
 
-rainmeter_home = str(os.environ['RAINMETER_HOME'])
+rainmeter_home = ""
 desktop = "C:\\Users\\aramg\\Desktop"
 resources_folder = util.get_resources_path()
 
